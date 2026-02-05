@@ -7,6 +7,7 @@ export const schema = createSchema({
       id: ID!
       email: String!
       name: String
+      createdAt: String!
     }
 
     type Query {
@@ -18,7 +19,9 @@ export const schema = createSchema({
     Query: {
       health: () => 'ok',
       users: async () => {
-        return prisma.user.findMany();
+        return prisma.user.findMany({
+          orderBy: { createdAt: 'desc' },
+        });
       },
     },
   },
