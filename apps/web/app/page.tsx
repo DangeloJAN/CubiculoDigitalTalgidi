@@ -64,7 +64,7 @@ export default function Home() {
   );
 }
 */
-
+export const dynamic = 'force-dynamic';
 import { graphqlClient } from '../lib/graphql';
 
 const HEALTH_QUERY = `
